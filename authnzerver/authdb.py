@@ -260,8 +260,8 @@ def get_auth_db(authdb_path,
 
         fileperm = oct(os.stat(potential_file_path)[stat.ST_MODE])
 
-        if not (fileperm == '0100600' or fileperm == '0o100600'):
-            raise IOError('incorrect permissions on auth DB, will not load it')
+        #if not (fileperm == '0100600' or fileperm == '0o100600'):
+        #    raise IOError('incorrect permissions on auth DB, will not load it')
 
         @event.listens_for(Engine, "connect")
         def set_sqlite_pragma(dbapi_connection, connection_record):
